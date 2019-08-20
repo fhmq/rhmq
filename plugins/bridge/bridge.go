@@ -26,7 +26,6 @@ type Elements struct {
 	Topic     string `json:"topic"`
 	Payload   string `json:"payload"`
 	Timestamp int64  `json:"ts"`
-	Size      int32  `json:"size"`
 	Action    string `json:"action"`
 }
 
