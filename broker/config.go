@@ -29,8 +29,6 @@ type Config struct {
 	WsPort  string  `json:"wsPort"`
 	WsTLS   bool    `json:"wsTLS"`
 	TlsInfo TLSInfo `json:"tlsInfo"`
-	Acl     bool    `json:"acl"`
-	AclConf string  `json:"aclConf"`
 	Debug   bool    `json:"debug"`
 	Plugin  Plugins `json:"plugins"`
 }
@@ -51,7 +49,6 @@ var DefaultConfig *Config = &Config{
 	Worker: 4096,
 	Host:   "0.0.0.0",
 	Port:   "1883",
-	Acl:    false,
 }
 
 var (

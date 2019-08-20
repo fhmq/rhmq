@@ -131,7 +131,7 @@ func (b *Broker) Start() {
 
 	//connet to router
 	if b.config.Router != "" {
-		go b.ConnectToDiscovery()
+		b.ConnectToDiscovery()
 		go b.processClusterInfo()
 		go b.initRPCService()
 	}
