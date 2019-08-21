@@ -284,6 +284,10 @@ func (b *Broker) handleConnection(typ int, conn net.Conn) {
 	connack.SessionPresent = msg.CleanSession
 	connack.ReturnCode = msg.Validate()
 
+	if len(msg.ClientIdentifier) == 0 {
+		connack.ReturnCode = packets.ErrRefusedIDRejected
+	}
+
 	if connack.ReturnCode != packets.Accepted {
 		err = connack.Write(conn)
 		if err != nil {
